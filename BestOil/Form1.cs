@@ -20,8 +20,10 @@ namespace BestOil
         string a92;
         string a95;
         string a98;
-        double price = 0.0;
-
+        private int price1 = 0;
+        private int price2 = 0;
+        private int price3 = 0;
+        private int price4 = 0;
         public Form1()
         {
             InitializeComponent();
@@ -86,6 +88,15 @@ namespace BestOil
             {
                 double price = priceOil * countOil;
                 label1.Text = price.ToString();
+
+                double num1, num2, result;
+
+                num1 = double.TryParse(label1.Text, out num1) ? num1 : 0;
+                num2 = double.TryParse(label8.Text, out num2) ? num2 : 0;
+
+                result = num1 + num2;
+                label7.Text = result.ToString();
+
                 textBox3.Text = price.ToString();
             }
             else
@@ -101,7 +112,13 @@ namespace BestOil
             bool isPriceValid = double.TryParse(textBox3.Text, out priceOil);
             bool isCountValid = double.TryParse(textBox1.Text, out countOil);
             label1.Text = priceOil.ToString();
+            double num1, num2, result;
 
+            num1 = double.TryParse(label1.Text, out num1) ? num1 : 0;
+            num2 = double.TryParse(label8.Text, out num2) ? num2 : 0;
+
+            result = num1 + num2;
+            label7.Text = result.ToString();
             if (isPriceValid && isCountValid)
             {
                 double price = priceOil / countOil;
@@ -119,56 +136,138 @@ namespace BestOil
             {
                 textBox11.ReadOnly = false;
             }
-            else { textBox11.ReadOnly = true; price = 0.0; }
+            else
+            {
+                textBox11.Clear();
+                textBox11.ReadOnly = true;
+
+            }
             if (checkBox2.Checked)
             {
                 textBox10.ReadOnly = false;
             }
-            else { textBox10.ReadOnly = true; price = 0.0; }
+            else
+            {
+                textBox10.Clear();
+                textBox10.ReadOnly = true;
+            }
             if (checkBox3.Checked)
             {
                 textBox8.ReadOnly = false;
             }
-            else { textBox8.ReadOnly = true; price = 0.0; }
+            else
+            {
+
+                textBox8.Clear();
+                textBox8.ReadOnly = true;
+            }
             if (checkBox4.Checked)
             {
                 textBox9.ReadOnly = false;
             }
-            else { textBox9.ReadOnly = true; price = 0.0; }
+            else
+            {
+                textBox9.Clear();
+                textBox9.ReadOnly = true;
+            }
+
         }
 
         private void textBox11_TextChanged(object sender, EventArgs e)
         {
             int count = 0;
             int priceProduct = 0;
-            if (checkBox1.Checked)
-            {
-                int.TryParse(textBox11.Text, out count);
-                int.TryParse(textBox4.Text, out priceProduct);
-                price += count * priceProduct;
-                label8.Text = price.ToString();
-            }
-            if (checkBox2.Checked)
-            {
-                int.TryParse(textBox10.Text, out count);
-                int.TryParse(textBox7.Text, out priceProduct);
-                price += count * priceProduct;
-                label8.Text = price.ToString();
-            }
-            if (checkBox3.Checked)
-            {
-                int.TryParse(textBox8.Text, out count);
-                int.TryParse(textBox6.Text, out priceProduct);
-                price += count * priceProduct;
-                label8.Text = price.ToString();
-            } 
-            if (checkBox4.Checked)
-            {
-                int.TryParse(textBox9.Text, out count);
-                int.TryParse(textBox5.Text, out priceProduct);
-                price += count * priceProduct;
-                label8.Text = price.ToString();
-            }
+
+            int.TryParse(textBox11.Text, out count);
+            int.TryParse(textBox4.Text, out priceProduct);
+
+            int price = count * priceProduct;
+
+            price1 = price;
+
+
+            label8.Text = (price1 + price2 + price3 + price4).ToString();
+
+            double num1, num2, result;
+
+            num1 = double.TryParse(label1.Text, out num1) ? num1 : 0;
+            num2 = double.TryParse(label8.Text, out num2) ? num2 : 0;
+
+            result = num1 + num2;
+            label7.Text = result.ToString();
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+            int count = 0;
+            int priceProduct = 0;
+
+            int.TryParse(textBox10.Text, out count);
+            int.TryParse(textBox7.Text, out priceProduct);
+
+            int price = count * priceProduct;
+            price2 = price;
+
+            label8.Text = (price1 + price2 + price3 + price4).ToString();
+
+            double num1, num2, result;
+
+            num1 = double.TryParse(label1.Text, out num1) ? num1 : 0;
+            num2 = double.TryParse(label8.Text, out num2) ? num2 : 0;
+
+            result = num1 + num2;
+            label7.Text = result.ToString();
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+            int count = 0;
+            int priceProduct = 0;
+
+            int.TryParse(textBox9.Text, out count);
+            int.TryParse(textBox6.Text, out priceProduct);
+
+            int price = count * priceProduct;
+            price3 = price;
+
+            label8.Text = (price1 + price2 + price3 + price4).ToString();
+
+            double num1, num2, result;
+
+            num1 = double.TryParse(label1.Text, out num1) ? num1 : 0;
+            num2 = double.TryParse(label8.Text, out num2) ? num2 : 0;
+
+            result = num1 + num2;
+            label7.Text = result.ToString();
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            int count = 0;
+            int priceProduct = 0;
+
+            int.TryParse(textBox8.Text, out count);
+            int.TryParse(textBox5.Text, out priceProduct);
+
+            int price = count * priceProduct;
+            price4 = price;
+
+            label8.Text = (price1 + price2 + price3 + price4).ToString();
+
+            double num1, num2, result;
+
+            num1 = double.TryParse(label1.Text, out num1) ? num1 : 0;
+            num2 = double.TryParse(label8.Text, out num2) ? num2 : 0;
+
+            result = num1 + num2;
+            label7.Text = result.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Оплата прошла успешно :)", "Оплата",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Application.Exit();
+
         }
     }
 }
