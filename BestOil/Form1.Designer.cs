@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -64,6 +65,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -86,7 +88,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(26, 12);
+            this.groupBox1.Location = new System.Drawing.Point(26, 19);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(348, 416);
             this.groupBox1.TabIndex = 0;
@@ -247,7 +249,7 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(390, 12);
+            this.groupBox2.Location = new System.Drawing.Point(390, 19);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(345, 416);
             this.groupBox2.TabIndex = 1;
@@ -262,7 +264,6 @@
             this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(69, 31);
             this.textBox11.TabIndex = 15;
-            this.textBox11.Text = "0";
             this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
@@ -273,7 +274,6 @@
             this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(69, 31);
             this.textBox10.TabIndex = 14;
-            this.textBox10.Text = "0";
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
@@ -284,7 +284,6 @@
             this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(69, 31);
             this.textBox9.TabIndex = 13;
-            this.textBox9.Text = "0";
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
@@ -295,7 +294,6 @@
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(69, 31);
             this.textBox8.TabIndex = 12;
-            this.textBox8.Text = "0";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
@@ -427,7 +425,7 @@
             this.groupBox5.Controls.Add(this.button2);
             this.groupBox5.Controls.Add(this.button1);
             this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
-            this.groupBox5.Location = new System.Drawing.Point(26, 449);
+            this.groupBox5.Location = new System.Drawing.Point(26, 456);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(709, 120);
             this.groupBox5.TabIndex = 2;
@@ -464,11 +462,18 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 32);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 581);
+            this.ClientSize = new System.Drawing.Size(758, 609);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -528,6 +533,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 
